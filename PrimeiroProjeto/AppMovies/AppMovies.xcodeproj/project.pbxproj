@@ -12,6 +12,8 @@
 		D32EA8712AE9A8F9004917F4 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D32EA86F2AE9A8F9004917F4 /* DetailViewController.xib */; };
 		D32EA8742AE9AFC0004917F4 /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32EA8732AE9AFC0004917F4 /* UIImageView+Ext.swift */; };
 		D32EA8762AE9B052004917F4 /* ImagesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32EA8752AE9B052004917F4 /* ImagesAPI.swift */; };
+		D32EA8782AE9B9A2004917F4 /* DetailViewCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32EA8772AE9B9A2004917F4 /* DetailViewCodeViewController.swift */; };
+		D32EA87E2AE9C0EE004917F4 /* ConstraintsKit in Frameworks */ = {isa = PBXBuildFile; productRef = D32EA87D2AE9C0EE004917F4 /* ConstraintsKit */; };
 		D36D9E902AE60062000FDE03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36D9E8F2AE60062000FDE03 /* AppDelegate.swift */; };
 		D36D9E922AE60062000FDE03 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36D9E912AE60062000FDE03 /* SceneDelegate.swift */; };
 		D36D9E942AE60062000FDE03 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36D9E932AE60062000FDE03 /* ListViewController.swift */; };
@@ -35,6 +37,7 @@
 		D32EA86F2AE9A8F9004917F4 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		D32EA8732AE9AFC0004917F4 /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
 		D32EA8752AE9B052004917F4 /* ImagesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesAPI.swift; sourceTree = "<group>"; };
+		D32EA8772AE9B9A2004917F4 /* DetailViewCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewCodeViewController.swift; sourceTree = "<group>"; };
 		D36D9E8C2AE60062000FDE03 /* AppMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D36D9E8F2AE60062000FDE03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D36D9E912AE60062000FDE03 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +61,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				817A08114A9A80746D299DA7 /* Pods_AppMovies.framework in Frameworks */,
+				D32EA87E2AE9C0EE004917F4 /* ConstraintsKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +152,7 @@
 			children = (
 				D36D9E932AE60062000FDE03 /* ListViewController.swift */,
 				D32EA86E2AE9A8F9004917F4 /* DetailViewController.swift */,
+				D32EA8772AE9B9A2004917F4 /* DetailViewCodeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -198,6 +203,9 @@
 			dependencies = (
 			);
 			name = AppMovies;
+			packageProductDependencies = (
+				D32EA87D2AE9C0EE004917F4 /* ConstraintsKit */,
+			);
 			productName = AppMovies;
 			productReference = D36D9E8C2AE60062000FDE03 /* AppMovies.app */;
 			productType = "com.apple.product-type.application";
@@ -226,6 +234,9 @@
 				Base,
 			);
 			mainGroup = D36D9E832AE60062000FDE03;
+			packageReferences = (
+				D32EA87C2AE9C0EE004917F4 /* XCRemoteSwiftPackageReference "constraints-kit" */,
+			);
 			productRefGroup = D36D9E8D2AE60062000FDE03 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -305,6 +316,7 @@
 				D36D9EB12AE60583000FDE03 /* UpcomingService.swift in Sources */,
 				D36D9EB62AE60801000FDE03 /* Movie.swift in Sources */,
 				D36D9E902AE60062000FDE03 /* AppDelegate.swift in Sources */,
+				D32EA8782AE9B9A2004917F4 /* DetailViewCodeViewController.swift in Sources */,
 				D36D9EB42AE606F5000FDE03 /* UpcomingResult.swift in Sources */,
 				D36D9EAC2AE60522000FDE03 /* Credential.swift in Sources */,
 				D36D9EAE2AE60548000FDE03 /* Route.swift in Sources */,
@@ -531,6 +543,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D32EA87C2AE9C0EE004917F4 /* XCRemoteSwiftPackageReference "constraints-kit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jVirus/constraints-kit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D32EA87D2AE9C0EE004917F4 /* ConstraintsKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D32EA87C2AE9C0EE004917F4 /* XCRemoteSwiftPackageReference "constraints-kit" */;
+			productName = ConstraintsKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D36D9E842AE60062000FDE03 /* Project object */;
 }

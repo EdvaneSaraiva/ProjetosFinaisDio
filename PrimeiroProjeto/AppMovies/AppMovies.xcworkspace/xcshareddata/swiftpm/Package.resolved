@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "constraints-kit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jVirus/constraints-kit",
+      "state" : {
+        "revision" : "8f9deae6db9ceae25210ecc49aef158a146b59b4",
+        "version" : "1.0.0"
+      }
+    }
+  ],
+  "version" : 2
+}

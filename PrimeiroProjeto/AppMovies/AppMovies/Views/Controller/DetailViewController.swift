@@ -29,4 +29,11 @@ class DetailViewController: UIViewController {
         }
     }
 
+    @IBAction func openDetailViewConde(_ sender: Any) {
+        let detailViewCodeViewController = DetailViewCodeViewController()
+        if let movie = movie {
+            detailViewCodeViewController.movie = movie
+        }
+        self.present(detailViewCodeViewController, animated: true)
+    }
 }
