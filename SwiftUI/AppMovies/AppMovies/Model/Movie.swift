@@ -6,8 +6,16 @@
 //
 import Foundation
 
-struct Movie: Identifiable {
+struct Movie: Codable, Identifiable {
     let id: Int
-    var name: String
-    var image: String?
+    let posterPath: String
+    let title: String
+    let overview: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case posterPath = "poster_path"
+        case title
+        case overview
+    }
 }

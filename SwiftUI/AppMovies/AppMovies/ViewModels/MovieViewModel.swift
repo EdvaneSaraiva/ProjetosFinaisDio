@@ -6,44 +6,44 @@
 //
 
 import Foundation
-import SwiftUI
 import Combine
 
-extension MoviewView {
-    @MainActor class ViewModel: ObservableObject {
-        enum ViewState {
-            case start
-            case loading
-            case success
-            case failure
-        }
-        
-        @Published var movie = [MovieResultModel]()
-        @Published var currentState: ViewState = .start
-        
-        private let dataProvider: MovieDataProvider?
-        private var cancelables = Set<AnyCancellable>()
-        
-        init(dataProvider: MovieDataProvider = MovieDataProvider()) {
-            self.dataProvider = dataProvider
-        }
-        
-        func doFetchMovieUpcoming() {
-            currentState = .loading
-            
-            dataProvider?.fetchUpcoming(language: "en-US", page: "1")
-                .sink(receiveCompletion: { completion in
-                    switch completion {
-                    case .finished:
-                        self.currentState = .success
-                    case .failure(_):
-                        self.currentState = .failure
-                    }
-                }, receiveValue: { movieResult in
-                    withAnimation{
-                        self.movie = movieResult.sorted { $0.title < $1.title }
-                    }
-                }).store(in: &cancelables)
-        }
+protocol MovieListViewModelInterface: ObservableObject {
+    var movieList: [Movie] { get set }
+    init(moviesFetcher: MoviesFetchable)
+    func fetchMovieList()
+}
+
+class MovieListViewModel {
+    @Published var movieList: [Movie]
+    private let moviesFetcher: MoviesFetchable
+    private var disposables = Set<AnyCancellable>()
+
+    required init(moviesFetcher: MoviesFetchable) {
+        self.moviesFetcher = moviesFetcher
+        self.movieList = [Movie]()
+    }
+}
+
+//MARK: - MoviesListViewModelInterface Extension
+
+extension MovieListViewModel: MovieListViewModelInterface {
+    func fetchMovieList() {
+        moviesFetcher
+            .fetchMoviesList()
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] value in
+                switch value {
+                case .failure:
+                    self?.movieList = []
+                case .finished:
+                    break
+                }
+            } receiveValue: { [weak self] moviesResponse in
+                if let movies = moviesResponse.results {
+                    self?.movieList = movies
+                }
+            }
+            .store(in: &disposables)
     }
 }

@@ -7,13 +7,11 @@
 
 import SwiftUI
 
-struct MoviewView: View {
-    
-    @State var movies: [Movie] = [
-        Movie(name: "Homem Aranha", image: "https://www.kasandbox.org/programming-images/avatars/purple-pi.png"),
-        Movie(name: "Homem de ferro", image: "https://www.kasandbox.org/programming-images/avatars/primosaur-ultimate.png"),
-        Movie(name: "Vingadores", image: "https://www.kasandbox.org/programming-images/avatars/mr-pants.png")
-    ]
+struct MoviewView<Model>: View where Model:MovieListViewModelInterface {
+    @StateObject private var viewModel: Model
+    init (viewModel: Model) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
 
     var body: some View {
         NavigationView {
@@ -21,16 +19,16 @@ struct MoviewView: View {
                 moviesFluctuationListView
             }
             .onAppear() {
-                MovieService().getUpComing()
+                viewModel.fetchMovieList()
             }
         }
     }
     
     private var moviesFluctuationListView: some View {
-        List(movies) { movie in
+        List(viewModel.movieList) { movie in
             NavigationLink(destination: DetailView(movie: movie)) {
                 HStack {
-                    Text("\(movie.name)")
+                    Text("\(movie.title)")
                     Spacer()
                 }
             }
@@ -39,5 +37,5 @@ struct MoviewView: View {
 }
 
 #Preview {
-    MoviewView()
+    MoviewView(viewModel: MockMovieViewModel(moviesFetcher: MoviesAPI()))
 }
