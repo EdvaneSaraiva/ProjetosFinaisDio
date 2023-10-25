@@ -16,6 +16,6 @@ public struct BaseURL {
     private init() {
         url = URLComponents()
         url.scheme = "https"
-        url.host = "api.themoviedb.org/3"
+        url.host = "api.themoviedb.org"
     }
 }

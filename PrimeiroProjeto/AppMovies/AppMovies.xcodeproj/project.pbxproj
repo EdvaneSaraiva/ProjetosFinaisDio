@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		817A08114A9A80746D299DA7 /* Pods_AppMovies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E0CB4C252A05095ADEBC271 /* Pods_AppMovies.framework */; };
+		D32EA8702AE9A8F9004917F4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32EA86E2AE9A8F9004917F4 /* DetailViewController.swift */; };
+		D32EA8712AE9A8F9004917F4 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D32EA86F2AE9A8F9004917F4 /* DetailViewController.xib */; };
+		D32EA8742AE9AFC0004917F4 /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32EA8732AE9AFC0004917F4 /* UIImageView+Ext.swift */; };
+		D32EA8762AE9B052004917F4 /* ImagesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32EA8752AE9B052004917F4 /* ImagesAPI.swift */; };
 		D36D9E902AE60062000FDE03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36D9E8F2AE60062000FDE03 /* AppDelegate.swift */; };
 		D36D9E922AE60062000FDE03 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36D9E912AE60062000FDE03 /* SceneDelegate.swift */; };
 		D36D9E942AE60062000FDE03 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36D9E932AE60062000FDE03 /* ListViewController.swift */; };
@@ -27,6 +31,10 @@
 		33D0191574A3BB02D94C5EC9 /* Pods-AppMovies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppMovies.release.xcconfig"; path = "Target Support Files/Pods-AppMovies/Pods-AppMovies.release.xcconfig"; sourceTree = "<group>"; };
 		5E0CB4C252A05095ADEBC271 /* Pods_AppMovies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppMovies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E84F65BC89BFE3C1F58F787 /* Pods-AppMovies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppMovies.debug.xcconfig"; path = "Target Support Files/Pods-AppMovies/Pods-AppMovies.debug.xcconfig"; sourceTree = "<group>"; };
+		D32EA86E2AE9A8F9004917F4 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		D32EA86F2AE9A8F9004917F4 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		D32EA8732AE9AFC0004917F4 /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
+		D32EA8752AE9B052004917F4 /* ImagesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesAPI.swift; sourceTree = "<group>"; };
 		D36D9E8C2AE60062000FDE03 /* AppMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D36D9E8F2AE60062000FDE03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D36D9E912AE60062000FDE03 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +81,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D32EA8722AE9AFB1004917F4 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D32EA8732AE9AFC0004917F4 /* UIImageView+Ext.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		D36D9E832AE60062000FDE03 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +110,7 @@
 		D36D9E8E2AE60062000FDE03 /* AppMovies */ = {
 			isa = PBXGroup;
 			children = (
+				D32EA8722AE9AFB1004917F4 /* Extension */,
 				D36D9EB22AE606E8000FDE03 /* Model */,
 				D36D9EAF2AE6056B000FDE03 /* Service */,
 				D36D9EA82AE604D9000FDE03 /* Network */,
@@ -101,6 +118,7 @@
 				D36D9E8F2AE60062000FDE03 /* AppDelegate.swift */,
 				D36D9E912AE60062000FDE03 /* SceneDelegate.swift */,
 				D36D9E952AE60062000FDE03 /* Main.storyboard */,
+				D32EA86F2AE9A8F9004917F4 /* DetailViewController.xib */,
 				D36D9E982AE60064000FDE03 /* Assets.xcassets */,
 				D36D9E9A2AE60064000FDE03 /* LaunchScreen.storyboard */,
 				D36D9E9D2AE60064000FDE03 /* Info.plist */,
@@ -129,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				D36D9E932AE60062000FDE03 /* ListViewController.swift */,
+				D32EA86E2AE9A8F9004917F4 /* DetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -139,6 +158,7 @@
 				D36D9EA92AE604F5000FDE03 /* BaseUrl.swift */,
 				D36D9EAB2AE60522000FDE03 /* Credential.swift */,
 				D36D9EAD2AE60548000FDE03 /* Route.swift */,
+				D32EA8752AE9B052004917F4 /* ImagesAPI.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -221,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D36D9E9C2AE60064000FDE03 /* LaunchScreen.storyboard in Resources */,
+				D32EA8712AE9A8F9004917F4 /* DetailViewController.xib in Resources */,
 				D36D9E992AE60064000FDE03 /* Assets.xcassets in Resources */,
 				D36D9E972AE60062000FDE03 /* Main.storyboard in Resources */,
 			);
@@ -275,6 +296,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D32EA8742AE9AFC0004917F4 /* UIImageView+Ext.swift in Sources */,
+				D32EA8762AE9B052004917F4 /* ImagesAPI.swift in Sources */,
+				D32EA8702AE9A8F9004917F4 /* DetailViewController.swift in Sources */,
 				D36D9E942AE60062000FDE03 /* ListViewController.swift in Sources */,
 				D36D9EAA2AE604F5000FDE03 /* BaseUrl.swift in Sources */,
 				D36D9EA62AE6027F000FDE03 /* ListTableViewCell.swift in Sources */,

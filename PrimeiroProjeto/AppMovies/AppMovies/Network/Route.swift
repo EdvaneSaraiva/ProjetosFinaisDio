@@ -8,5 +8,5 @@
 import Foundation
 
 enum Route: String {
-    case upcoming = "movie/upcoming"
+    case upcoming = "/3/movie/upcoming"
 }
